@@ -1,18 +1,13 @@
 <template>
-  <div class="login">
-    <div class="form">
+  <div class="signup">
+    <div class="container col-sm-6">
       <div class="text-center">
         <router-link to="/home">
-          <img
-            src="../assets/logo_web.png"
-            alt=""
-            style="width: 250px"
-            class="m-4"
-          />
+          <img src="../assets/logo_web.png" alt="" height="200px" class="m-2" />
         </router-link>
       </div>
 
-      <b-form class="col-sm-12" @submit="onSubmit" @reset="onReset" v-if="show">
+      <b-form class="p-2" @submit="onSubmit" @reset="onReset" v-if="show">
         <b-form-group id="input-group-1" label-for="input-1">
           <b-form-input
             id="input-1"
@@ -28,35 +23,33 @@
           <b-form-input
             id="input-2"
             class="b-form-input"
-            v-model="form.password"
+            v-model="form.name"
             required
-            placeholder="**********"
+            placeholder="Nome completo"
           ></b-form-input>
         </b-form-group>
-      </b-form>
 
-      <div class="col-sm-8 text-center">
-        <router-link to="/signup">
-          <button type="button" class="btn btn-primary mb-2">
-            <div class="btn-center size-2">
-              <i class="material-icons">
-                account_circle
-              </i>
-              Entrar
-            </div>
-          </button>
-        </router-link>
-        <router-link to="/login">
-          <button type="button" class="btn btn-success mb-2">
-            <div class="btn-center size-2">
-              <i class="material-icons">
-                assignment_ind
-              </i>
-              Criar conta
-            </div>
-          </button>
-        </router-link>
-      </div>
+        <b-form-group id="input-group-3" label-for="input-3">
+          <b-form-select
+            id="input-3"
+            class="b-form-select"
+            v-model="form.country"
+            :options="country"
+            required
+          ></b-form-select>
+        </b-form-group>
+
+        <div class="text-right">
+          <router-link to="/home">
+            <b-button class="m-2" type="reset" variant="danger">
+              Cancelar
+            </b-button>
+          </router-link>
+          <b-button class="m-2" type="submit" variant="success">
+            Cadastrar
+          </b-button>
+        </div>
+      </b-form>
     </div>
   </div>
 </template>
@@ -67,8 +60,10 @@ export default {
     return {
       form: {
         email: "",
-        name: ""
+        name: "",
+        country: null
       },
+      country: [{ text: "Selecione o país", value: null }, "Brasil"],
       show: true
     };
   },
@@ -81,8 +76,8 @@ export default {
       evt.preventDefault();
       // Reset our form values
       this.form.email = "";
-      this.form.password = "";
-
+      this.form.name = "";
+      this.form.country = null;
       // Trick to reset/clear native browser form validation state
       this.show = false;
       this.$nextTick(() => {
@@ -93,21 +88,17 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.login {
+<style lang="scss">
+.signup {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  transform: translatey(10%);
+  height: 100vh;
+  background-image: url("../assets/background/background_asset_wave.png");
+  background-size: 100vw 200px;
+  background-repeat: no-repeat;
+  background-position: bottom;
 }
-.form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 .b-form-input,
 .b-form-select {
   font-size: 18px;

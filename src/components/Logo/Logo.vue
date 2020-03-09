@@ -1,7 +1,5 @@
 <template>
-  <h1>
-    Profile
-  </h1>
+  <img class="logo" src="../assets/logo.png" />
 </template>
 
 <script>

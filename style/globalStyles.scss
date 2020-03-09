@@ -1,0 +1,50 @@
+$easybuy_brown: #75010a;
+$easybuy_yellow: #ebb818;
+$easybuy_blue: #11294e;
+$borda: 1px solid red;
+
+/*Fonts*/
+.f_48px {
+  font-size: 48px;
+}
+
+.easybuy_brown {
+  color: $easybuy_brown;
+}
+
+.easybuy_yellow {
+  color: $easybuy_yellow;
+}
+
+.easybuy_blue {
+  color: $easybuy_blue;
+}
+
+.bg-easybuy-blue {
+  background: $easybuy_blue;
+}
+
+.btn-easybuy-blue {
+  color: white;
+  background: $easybuy_blue;
+}
+
+.borda {
+  border: $borda;
+}
+
+.btn-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  &.size-1 {
+    height: 50px;
+    width: 190px;
+  }
+  &.size-2 {
+    height: 40px;
+    width: 190px;
+  }
+}
