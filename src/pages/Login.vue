@@ -85,7 +85,6 @@ export default {
       // Reset our form values
       this.form.email = "";
       this.form.password = "";
-
       // Trick to reset/clear native browser form validation state
       this.show = false;
       this.$nextTick(() => {
@@ -110,7 +109,6 @@ export default {
   justify-content: center;
   align-items: center;
 }
-
 .b-form-input,
 .b-form-select {
   font-size: 18px;
