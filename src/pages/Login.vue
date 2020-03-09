@@ -36,17 +36,17 @@
       </b-form>
 
       <div class="col-sm-8 text-center">
-        <router-link to="/signup">
+        <router-link to="/profile">
           <button type="button" class="btn btn-primary mb-2">
             <div class="btn-center size-2">
               <i class="material-icons">
-                account_circle
+                arrow_right_alt
               </i>
               Entrar
             </div>
           </button>
         </router-link>
-        <router-link to="/login">
+        <router-link to="/signup">
           <button type="button" class="btn btn-success mb-2">
             <div class="btn-center size-2">
               <i class="material-icons">
@@ -57,6 +57,9 @@
           </button>
         </router-link>
       </div>
+      <router-link to="/resetpassword">
+        <h5 class="easybuy-brown">Recuperar senha?</h5>
+      </router-link>
     </div>
   </div>
 </template>
@@ -112,7 +115,8 @@ export default {
 .b-form-select {
   font-size: 18px;
   padding-left: 30px;
-  height: 50px;
+  margin-top: -10px;
+  height: 70px;
   border-radius: 20px;
   border: none;
 }
